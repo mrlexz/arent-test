@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "../../../public/logo.svg";
 import IconMemo from "../../assets/icons/icon_memo.svg";
 import IconChallenge from "../../assets/icons/icon_challenge.svg";
@@ -141,54 +141,62 @@ const Navbar = () => {
               menuExpanded ? " visible opacity-100" : "invisible opacity-0"
             } absolute w-[280px] right-[162px] top-[44px] flex flex-col z-10 bg-[#777777] transition-opacity ease-in-out delay-50 duration-300`}
           >
-            <Link
+            <NavLink
               to="/my-record"
-              className="px-8 py-6 border-b-2 border-b-[#ffffff] border-opacity-20"
+              className={({ isActive }) => {
+                return `px-8 py-6 border-b-2 border-b-[#ffffff] border-opacity-20 ${
+                  isActive ? "text-[#FF963C]" : "text-white"
+                }`;
+              }}
             >
-              <span className="py-3 text-white text-base font-semibold font-noto_sans">
+              <span className="py-3 text-base font-semibold font-noto_sans">
                 自分の記録
               </span>
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/"
               className="px-8 py-6 border-b-2 border-b-[#ffffff] border-opacity-20"
             >
-              <span className="py-3 text-white text-base font-semibold font-noto_sans">
+              <span className="py-3 text-base font-semibold font-noto_sans">
                 体重グラフ
               </span>
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/"
               className="px-8 py-6 border-b-2 border-b-[#ffffff] border-opacity-20"
             >
-              <span className="py-3 text-white text-base font-semibold font-noto_sans">
+              <span className="py-3 text-base font-semibold font-noto_sans">
                 目標
               </span>
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/"
               className="px-8 py-6 border-b-2 border-b-[#ffffff] border-opacity-20"
             >
-              <span className="py-3 text-white text-base font-semibold font-noto_sans">
+              <span className="py-3 text-base font-semibold font-noto_sans">
                 選択中のコース
               </span>
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/column-page"
-              className="px-8 py-6 border-b-2 border-b-[#ffffff] border-opacity-20"
+              className={({ isActive }) => {
+                return `px-8 py-6 border-b-2 border-b-[#ffffff] border-opacity-20 ${
+                  isActive ? "text-[#FF963C]" : "text-white"
+                }`;
+              }}
             >
-              <span className="py-3 text-white text-base font-semibold font-noto_sans">
+              <span className="py-3 text-base font-semibold font-noto_sans">
                 コラム一覧
               </span>
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
               to="/"
               className="px-8 py-6 border-b-2 border-b-[#ffffff] border-opacity-20"
             >
-              <span className="py-3 text-white text-base font-semibold font-noto_sans">
+              <span className="py-3 text-base font-semibold font-noto_sans">
                 設定
               </span>
-            </Link>
+            </NavLink>
           </div>
         </div>
       </nav>
