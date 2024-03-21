@@ -1,5 +1,7 @@
 # Arent Test
 
+Production build: https://arent-test-two.vercel.app/
+
 ## Install environment
 
 To start this project, make sure you have the following installed:
