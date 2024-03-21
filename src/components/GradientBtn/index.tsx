@@ -7,7 +7,7 @@ const GradientBtn: FC<{
 }> = ({ containerClassName = "", children, onClick }) => {
   return (
     <div
-      className={`bg-gradient-to-t from-[#FFCC21] to-[#FF963C] cursor-pointer ${containerClassName}`}
+      className={`bg-gradient-to-t from-primary-300 to-primary-400 cursor-pointer ${containerClassName}`}
       onClick={() => onClick?.()}
     >
       {children}

@@ -31,7 +31,7 @@ const Navbar = () => {
   }, [menuExpanded, wrapperRef]);
 
   return (
-    <header className="w-full bg-[#414141]">
+    <header className="w-full bg-dark-500">
       <nav className="flex justify-between items-center px-[160px] py-2">
         <NavLink to="/" className="max-h-10">
           <img src={logo} width="109" height="40" className="max-h-10" />
@@ -44,7 +44,7 @@ const Navbar = () => {
                 to="/"
                 className={({ isActive }) => {
                   return `w-full flex items-center px-2 py-2 gap-2 ${
-                    isActive ? "text-[#FF963C]" : "text-white"
+                    isActive ? "text-primary-400" : "text-white"
                   }`;
                 }}
               >
@@ -64,7 +64,7 @@ const Navbar = () => {
                 to="/my-record"
                 className={({ isActive }) => {
                   return `flex items-center px-2 py-2 gap-2 ${
-                    isActive ? "text-[#FF963C]" : "text-white"
+                    isActive ? "text-primary-400" : "text-white"
                   }`;
                 }}
               >
@@ -84,7 +84,7 @@ const Navbar = () => {
                 to="/column-page"
                 className={({ isActive }) => {
                   return `flex items-center px-2 py-2 gap-2 relative ${
-                    isActive ? "text-[#FF963C]" : "text-white"
+                    isActive ? "text-primary-400" : "text-white"
                   }`;
                 }}
               >
@@ -95,7 +95,7 @@ const Navbar = () => {
                     height="32"
                     className="max-h-8"
                   />
-                  <div className="absolute top-[-5px] right-[-5px] bg-[#EA6C00] w-4 h-4 rounded-full flex justify-center items-center">
+                  <div className="absolute top-[-5px] right-[-5px] bg-primary-500 w-4 h-4 rounded-full flex justify-center items-center">
                     <span className="text-white text-[10px] leading-[12px] font-normal">
                       1
                     </span>
@@ -139,13 +139,13 @@ const Navbar = () => {
             ref={wrapperRef}
             className={`${
               menuExpanded ? " visible opacity-100" : "invisible opacity-0"
-            } absolute w-[280px] right-[162px] top-[44px] flex flex-col z-10 bg-[#777777] transition-opacity ease-in-out delay-50 duration-300`}
+            } absolute w-[280px] right-[162px] top-[44px] flex flex-col z-10 bg-gray-400 transition-opacity ease-in-out delay-50 duration-300`}
           >
             <NavLink
               to="/my-record"
               className={({ isActive }) => {
-                return `px-8 py-6 border-b-2 border-b-[#ffffff] border-opacity-20 ${
-                  isActive ? "text-[#FF963C]" : "text-white"
+                return `px-8 py-6 border-b-2 border-b-c_white border-opacity-20 ${
+                  isActive ? "text-primary-400" : "text-white"
                 }`;
               }}
             >
@@ -155,7 +155,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               to="/"
-              className="px-8 py-6 border-b-2 border-b-[#ffffff] border-opacity-20"
+              className="px-8 py-6 border-b-2 border-b-c_white border-opacity-20"
             >
               <span className="py-3 text-base font-semibold font-noto_sans">
                 体重グラフ
@@ -163,7 +163,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               to="/"
-              className="px-8 py-6 border-b-2 border-b-[#ffffff] border-opacity-20"
+              className="px-8 py-6 border-b-2 border-b-c_white border-opacity-20"
             >
               <span className="py-3 text-base font-semibold font-noto_sans">
                 目標
@@ -171,7 +171,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               to="/"
-              className="px-8 py-6 border-b-2 border-b-[#ffffff] border-opacity-20"
+              className="px-8 py-6 border-b-2 border-b-c_white border-opacity-20"
             >
               <span className="py-3 text-base font-semibold font-noto_sans">
                 選択中のコース
@@ -180,8 +180,8 @@ const Navbar = () => {
             <NavLink
               to="/column-page"
               className={({ isActive }) => {
-                return `px-8 py-6 border-b-2 border-b-[#ffffff] border-opacity-20 ${
-                  isActive ? "text-[#FF963C]" : "text-white"
+                return `px-8 py-6 border-b-2 border-b-c_white border-opacity-20 ${
+                  isActive ? "text-primary-400" : "text-white"
                 }`;
               }}
             >
@@ -191,7 +191,7 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               to="/"
-              className="px-8 py-6 border-b-2 border-b-[#ffffff] border-opacity-20"
+              className="px-8 py-6 border-b-2 border-b-c_white border-opacity-20"
             >
               <span className="py-3 text-base font-semibold font-noto_sans">
                 設定

@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <div className="px-[160px] py-[52px] bg-[#414141]">
+    <div className="px-[160px] py-[52px] bg-dark-500">
       <div className="flex gap-10">
         <div className="cursor-pointer">
           <span className="text-[11px] leading-4 text-white tracking-wide font-light font-noto_sans ">

@@ -124,7 +124,7 @@ function TopPage() {
 
   return (
     <div className="flex flex-col mb-6">
-      <div className="w-full h-[312px] flex bg-[#2E2E2E]">
+      <div className="w-full h-[312px] flex bg-dark-600">
         <div className="w-[40%] overflow-hidden relative">
           <img className="w-full h-full object-cover" src={image1} />
           <div className="absolute w-[181px] h-[181px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">
@@ -211,7 +211,7 @@ function TopPage() {
             .map((item) => (
               <div key={item.key} className="w-auto h-[234px] relative">
                 <img src={item.icon} className="w-full h-full" />
-                <div className="bg-[#FFCC21] p-1 absolute left-0 bottom-0">
+                <div className="bg-primary-300 p-1 absolute left-0 bottom-0">
                   <span className="text-[15px] text-white leading-[18px]">
                     {item.name}
                   </span>

@@ -131,9 +131,9 @@ function ColumnPage() {
           {columns.map((item) => (
             <div
               key={item.key}
-              className="bg-[#2E2E2E] text-center flex flex-col justify-center items-center py-5"
+              className="bg-dark-600 text-center flex flex-col justify-center items-center py-5"
             >
-              <span className="inline-block text-[22px] font-normal text-[#FFCC21] leading-[27px] tracking-[0.11px]">
+              <span className="inline-block text-[22px] font-normal text-primary-300 leading-[27px] tracking-[0.11px]">
                 {item.title}
               </span>
               <div className="w-[56px] h-[1px] bg-white my-3" />
@@ -148,16 +148,16 @@ function ColumnPage() {
             <div key={item.key}>
               <div className="w-auto h-[144px] relative">
                 <img src={item.icon} className="w-full h-full" />
-                <div className="bg-[#FFCC21] p-1 absolute left-0 bottom-0">
+                <div className="bg-text-primary-300 p-1 absolute left-0 bottom-0">
                   <span className="text-[15px] text-white leading-[18px]">
                     {item.name}
                   </span>
                 </div>
               </div>
-              <span className="inline-block text-[15px] leading-[22px] tracking-[0.08px] font-light text-[#414141] font-noto_sans">
+              <span className="inline-block text-[15px] leading-[22px] tracking-[0.08px] font-light text-dark-500 font-noto_sans">
                 {item.description}
               </span>
-              <span className="inline-block text-[12px] leading-[22px] tracking-[0.08px] font-light text-[#FF963C] font-noto_sans">
+              <span className="inline-block text-[12px] leading-[22px] tracking-[0.08px] font-light text-primary-400 font-noto_sans">
                 {item.tags.map((t) => `#${t} `)}
               </span>
             </div>
