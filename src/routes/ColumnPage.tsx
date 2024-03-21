@@ -137,7 +137,7 @@ function ColumnPage() {
                 {item.title}
               </span>
               <div className="w-[56px] h-[1px] bg-white my-3" />
-              <span className="inline-block text-[18px] leading-[26px] tracking-[0.08px] font-light text-white">
+              <span className="inline-block text-[18px] leading-[26px] tracking-[0.08px] font-light text-white font-noto_sans">
                 {item.desc}
               </span>
             </div>
@@ -154,10 +154,10 @@ function ColumnPage() {
                   </span>
                 </div>
               </div>
-              <span className="inline-block text-[15px] leading-[22px] tracking-[0.08px] font-light text-[#414141]">
+              <span className="inline-block text-[15px] leading-[22px] tracking-[0.08px] font-light text-[#414141] font-noto_sans">
                 {item.description}
               </span>
-              <span className="inline-block text-[12px] leading-[22px] tracking-[0.08px] font-light text-[#FF963C]">
+              <span className="inline-block text-[12px] leading-[22px] tracking-[0.08px] font-light text-[#FF963C] font-noto_sans">
                 {item.tags.map((t) => `#${t} `)}
               </span>
             </div>
@@ -173,7 +173,7 @@ function ColumnPage() {
             containerClassName="py-3.5 px-[68px] rounded"
             onClick={fetchData}
           >
-            <span className="text-white text-xl font-normal ">
+            <span className="text-white text-xl font-normal font-noto_sans">
               記録をもっと見る
             </span>
           </GradientBtn>

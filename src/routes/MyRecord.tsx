@@ -127,7 +127,7 @@ function MyRecord() {
                   {item.title}
                 </span>
                 <div className=" bg-[#FF963C] w-[80%]">
-                  <span className="inline-block text-[14px] leading-[20px] font-light text-white">
+                  <span className="inline-block text-[14px] leading-[20px] font-light text-white font-noto_sans">
                     {item.desc}
                   </span>
                 </div>
@@ -149,22 +149,22 @@ function MyRecord() {
           </div>
           <div className="mt-4 flex gap-4">
             <div className="bg-white w-fit px-5 rounded-3xl">
-              <span className="font-light text-[15px] leading-[22px] text-[#FFCC21] tracking-[0.08px]">
+              <span className="font-light text-[15px] leading-[22px] text-[#FFCC21] tracking-[0.08px] font-noto_sans">
                 日
               </span>
             </div>
             <div className="bg-white w-fit px-5 rounded-3xl">
-              <span className="font-light text-[15px] leading-[22px] text-[#FFCC21] tracking-[0.08px]">
+              <span className="font-light text-[15px] leading-[22px] text-[#FFCC21] tracking-[0.08px] font-noto_sans">
                 週
               </span>
             </div>
             <div className="bg-white w-fit px-5 rounded-3xl">
-              <span className="font-light text-[15px] leading-[22px] text-[#FFCC21] tracking-[0.08px]">
+              <span className="font-light text-[15px] leading-[22px] text-[#FFCC21] tracking-[0.08px] font-noto_sans">
                 月
               </span>
             </div>
             <div className="bg-[#FFCC21] w-fit px-5 rounded-3xl">
-              <span className="font-light text-[15px] leading-[22px] text-white tracking-[0.08px]">
+              <span className="font-light text-[15px] leading-[22px] text-white tracking-[0.08px] font-noto_sans">
                 年
               </span>
             </div>
@@ -188,7 +188,7 @@ function MyRecord() {
                 <div className="flex justify-start">
                   <div className="text-white">&#x2022;</div>
                   <div className="flex flex-col ml-2">
-                    <span className="inline-block text-[15px] leading-[22px] tracking-[0.08px] font-light text-white">
+                    <span className="inline-block text-[15px] leading-[22px] tracking-[0.08px] font-light text-white font-noto_sans">
                       家事全般（立位・軽い
                     </span>
                     <span className="inline-block text-[15px] leading-[18px] tracking-[0.08px] font-normal text-[#FFCC21]">
@@ -220,10 +220,10 @@ function MyRecord() {
               <span className="inline-block text-[18px] leading-[22px] tracking-[0.09px] font-normal text-[#414141]">
                 {item.time}
               </span>
-              <span className="inline-block text-[12px] leading-[17px] tracking-[0.06px] font-light text-[#414141] mt-2">
+              <span className="inline-block text-[12px] leading-[17px] tracking-[0.06px] font-light text-[#414141] mt-2 font-noto_sans">
                 {item.title}
               </span>
-              <span className="inline-block text-[12px] leading-[17px] tracking-[0.06px] font-light text-[#414141]">
+              <span className="inline-block text-[12px] leading-[17px] tracking-[0.06px] font-light text-[#414141] font-noto_sans">
                 {item.desc}
               </span>
             </div>
@@ -239,7 +239,7 @@ function MyRecord() {
             containerClassName="py-3.5 px-[68px] rounded"
             onClick={fetchData}
           >
-            <span className="text-white text-xl font-normal ">
+            <span className="text-white text-xl font-normal font-noto_sans">
               記録をもっと見る
             </span>
           </GradientBtn>

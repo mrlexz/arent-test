@@ -229,7 +229,7 @@ function TopPage() {
             containerClassName="py-3.5 px-[68px] rounded"
             onClick={fetchData}
           >
-            <span className="text-white text-xl font-normal ">
+            <span className="text-white text-xl font-normal font-noto_sans">
               記録をもっと見る
             </span>
           </GradientBtn>

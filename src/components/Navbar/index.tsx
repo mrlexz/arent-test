@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../../public/logo.svg";
 import IconMemo from "../../assets/icons/icon_memo.svg";
 import IconChallenge from "../../assets/icons/icon_challenge.svg";
@@ -33,29 +33,40 @@ const Navbar = () => {
   return (
     <header className="w-full bg-[#414141]">
       <nav className="flex justify-between items-center px-[160px] py-2">
-        <Link to="/" className="max-h-10">
+        <NavLink to="/" className="max-h-10">
           <img src={logo} width="109" height="40" className="max-h-10" />
-        </Link>
+        </NavLink>
 
         <div className="flex">
           <ul className="flex">
             <li className="flex min-w-[160px]">
-              <Link to="/" className="w-full flex items-center px-2 py-2 gap-2">
+              <NavLink
+                to="/"
+                className={({ isActive }) => {
+                  return `w-full flex items-center px-2 py-2 gap-2 ${
+                    isActive ? "text-[#FF963C]" : "text-white"
+                  }`;
+                }}
+              >
                 <img
                   src={IconMemo}
                   width="32"
                   height="32"
                   className="max-h-8"
                 />
-                <span className="text-base text-white font-light">
+                <span className="text-bas font-light font-noto_sans">
                   自分の記録
                 </span>
-              </Link>
+              </NavLink>
             </li>
             <li className="flex min-w-[160px]">
-              <Link
+              <NavLink
                 to="/my-record"
-                className="flex items-center px-2 py-2 gap-2"
+                className={({ isActive }) => {
+                  return `flex items-center px-2 py-2 gap-2 ${
+                    isActive ? "text-[#FF963C]" : "text-white"
+                  }`;
+                }}
               >
                 <img
                   src={IconChallenge}
@@ -63,15 +74,19 @@ const Navbar = () => {
                   height="32"
                   className="max-h-8"
                 />
-                <span className="text-base text-white font-light">
+                <span className="text-base font-light font-noto_sans">
                   チャレンジ
                 </span>
-              </Link>
+              </NavLink>
             </li>
             <li className="flex min-w-[160px]">
-              <Link
+              <NavLink
                 to="/column-page"
-                className="flex items-center px-2 py-2 gap-2 relative"
+                className={({ isActive }) => {
+                  return `flex items-center px-2 py-2 gap-2 relative ${
+                    isActive ? "text-[#FF963C]" : "text-white"
+                  }`;
+                }}
               >
                 <div className="relative">
                   <img
@@ -87,10 +102,10 @@ const Navbar = () => {
                   </div>
                 </div>
 
-                <span className="text-base text-white font-light">
+                <span className="text-bas font-light font-noto_sans">
                   お知らせ
                 </span>
-              </Link>
+              </NavLink>
             </li>
             <li
               ref={closeRef}
@@ -130,7 +145,7 @@ const Navbar = () => {
               to="/my-record"
               className="px-8 py-6 border-b-2 border-b-[#ffffff] border-opacity-20"
             >
-              <span className="py-3 text-white text-base font-semibold">
+              <span className="py-3 text-white text-base font-semibold font-noto_sans">
                 自分の記録
               </span>
             </Link>
@@ -138,7 +153,7 @@ const Navbar = () => {
               to="/"
               className="px-8 py-6 border-b-2 border-b-[#ffffff] border-opacity-20"
             >
-              <span className="py-3 text-white text-base font-semibold">
+              <span className="py-3 text-white text-base font-semibold font-noto_sans">
                 体重グラフ
               </span>
             </Link>
@@ -146,7 +161,7 @@ const Navbar = () => {
               to="/"
               className="px-8 py-6 border-b-2 border-b-[#ffffff] border-opacity-20"
             >
-              <span className="py-3 text-white text-base font-semibold">
+              <span className="py-3 text-white text-base font-semibold font-noto_sans">
                 目標
               </span>
             </Link>
@@ -154,7 +169,7 @@ const Navbar = () => {
               to="/"
               className="px-8 py-6 border-b-2 border-b-[#ffffff] border-opacity-20"
             >
-              <span className="py-3 text-white text-base font-semibold">
+              <span className="py-3 text-white text-base font-semibold font-noto_sans">
                 選択中のコース
               </span>
             </Link>
@@ -162,7 +177,7 @@ const Navbar = () => {
               to="/column-page"
               className="px-8 py-6 border-b-2 border-b-[#ffffff] border-opacity-20"
             >
-              <span className="py-3 text-white text-base font-semibold">
+              <span className="py-3 text-white text-base font-semibold font-noto_sans">
                 コラム一覧
               </span>
             </Link>
@@ -170,7 +185,7 @@ const Navbar = () => {
               to="/"
               className="px-8 py-6 border-b-2 border-b-[#ffffff] border-opacity-20"
             >
-              <span className="py-3 text-white text-base font-semibold">
+              <span className="py-3 text-white text-base font-semibold font-noto_sans">
                 設定
               </span>
             </Link>
