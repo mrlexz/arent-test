@@ -3,7 +3,6 @@ import {
   CircularProgressbarWithChildren,
 } from "react-circular-progressbar";
 import image1 from "../assets/images/d01.jpg";
-import graph from "../assets/icons/main_graph.svg";
 import GradientBtn from "../components/GradientBtn";
 import IconKnife from "../assets/icons/icon_knife.svg";
 import IconCup from "../assets/icons/icon_cup.svg";
@@ -19,6 +18,9 @@ import din3 from "../assets/images/l03.jpg";
 import snk1 from "../assets/images/s01.jpg";
 import { useState } from "react";
 import LineChart from "../components/LineChart";
+import { selectRandomItem } from "../utils";
+import Spin from "../components/Spin";
+import useLoadMore from "../hooks/useLoadMore";
 
 const foods = [
   {
@@ -72,9 +74,45 @@ const foods = [
 ];
 
 function TopPage() {
+  const [listFood, setListFood] = useState(() => foods);
   const [currentFood, setCurrentFood] = useState<
     "morning" | "lunch" | "dinner" | "snack" | null
   >(null);
+
+  const fetchMore = () => {
+    setListFood((prev) => {
+      const randomFood = selectRandomItem([
+        "morning",
+        "lunch",
+        "dinner",
+        "snack",
+      ]) as "morning" | "lunch" | "dinner" | "snack";
+      return [
+        ...prev,
+        ...Array.from({ length: 8 }).map((_, index) => {
+          return {
+            key: Math.random().toString(),
+            name: `05.20.${randomFood} ${index}`,
+            icon: selectRandomItem([
+              mor1,
+              mor2,
+              mor3,
+              lun1,
+              lun2,
+              lun3,
+              din1,
+              din2,
+              din3,
+              snk1,
+            ]),
+            category: randomFood,
+          };
+        }),
+      ];
+    });
+  };
+
+  const { fetchData, isLoading } = useLoadMore(fetchMore);
 
   const onSelectFood = (category: "morning" | "lunch" | "dinner" | "snack") => {
     if (currentFood === category) {
@@ -166,7 +204,7 @@ function TopPage() {
       </div>
       <div className="bg-white px-[160px]">
         <div className="grid grid-cols-4 gap-2">
-          {foods
+          {listFood
             .filter((item) =>
               currentFood != null ? item.category === currentFood : true
             )
@@ -181,8 +219,16 @@ function TopPage() {
               </div>
             ))}
         </div>
+        {isLoading ? (
+          <div className="my-4">
+            <Spin />
+          </div>
+        ) : null}
         <div className="flex justify-center items-center m-6 ">
-          <GradientBtn containerClassName="py-3.5 px-[68px] rounded">
+          <GradientBtn
+            containerClassName="py-3.5 px-[68px] rounded"
+            onClick={fetchData}
+          >
             <span className="text-white text-xl font-normal ">
               記録をもっと見る
             </span>

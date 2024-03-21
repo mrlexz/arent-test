@@ -7,6 +7,10 @@ import col5 from "../assets/images/column-5.jpg";
 import col6 from "../assets/images/column-6.jpg";
 import col7 from "../assets/images/column-7.jpg";
 import col8 from "../assets/images/column-8.jpg";
+import useLoadMore from "../hooks/useLoadMore";
+import Spin from "../components/Spin";
+import { useState } from "react";
+import { selectRandomItem } from "../utils";
 
 const news = [
   {
@@ -91,6 +95,35 @@ const columns = [
 ];
 
 function ColumnPage() {
+  const [listNew, setNew] = useState(() => news);
+  const fetchMore = () => {
+    setNew((prev) => {
+      return [
+        ...prev,
+        ...Array.from({ length: 8 }).map(() => {
+          return {
+            key: Math.random().toString(),
+            name: "2021.05.17   23:25",
+            icon: selectRandomItem([
+              col1,
+              col2,
+              col3,
+              col4,
+              col5,
+              col6,
+              col7,
+              col8,
+            ]),
+            description:
+              "魚を食べて頭もカラダも元気に！知っておきたい魚を食べるメリ…",
+            tags: ["魚料理", "和食", "DHA"],
+          };
+        }),
+      ];
+    });
+  };
+
+  const { fetchData, isLoading } = useLoadMore(fetchMore);
   return (
     <div className="flex flex-col mb-6 mt-14">
       <div className="bg-white px-[160px]">
@@ -111,7 +144,7 @@ function ColumnPage() {
           ))}
         </div>
         <div className="grid grid-cols-4 gap-2">
-          {news.map((item) => (
+          {listNew.map((item) => (
             <div key={item.key}>
               <div className="w-auto h-[144px] relative">
                 <img src={item.icon} className="w-full h-full" />
@@ -130,8 +163,16 @@ function ColumnPage() {
             </div>
           ))}
         </div>
+        {isLoading ? (
+          <div className="my-4">
+            <Spin />
+          </div>
+        ) : null}
         <div className="flex justify-center items-center m-6 ">
-          <GradientBtn containerClassName="py-3.5 px-[68px] rounded">
+          <GradientBtn
+            containerClassName="py-3.5 px-[68px] rounded"
+            onClick={fetchData}
+          >
             <span className="text-white text-xl font-normal ">
               記録をもっと見る
             </span>

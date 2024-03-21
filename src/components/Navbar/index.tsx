@@ -123,8 +123,8 @@ const Navbar = () => {
           <div
             ref={wrapperRef}
             className={`${
-              menuExpanded ? "opacity-100" : "opacity-0"
-            } absolute w-[280px] right-[192px] top-[44px] flex flex-col z-10 bg-[#777777] transition-opacity ease-in-out delay-50 duration-300`}
+              menuExpanded ? " visible opacity-100" : "invisible opacity-0"
+            } absolute w-[280px] right-[162px] top-[44px] flex flex-col z-10 bg-[#777777] transition-opacity ease-in-out delay-50 duration-300`}
           >
             <Link
               to="/my-record"

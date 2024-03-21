@@ -3,6 +3,9 @@ import MyRe1 from "../assets/images/MyRecommend-1.jpg";
 import MyRe2 from "../assets/images/MyRecommend-2.jpg";
 import MyRe3 from "../assets/images/MyRecommend-3.jpg";
 import LineChart from "../components/LineChart";
+import Spin from "../components/Spin";
+import { useState } from "react";
+import useLoadMore from "../hooks/useLoadMore";
 
 const diaries = [
   {
@@ -85,6 +88,27 @@ const columns = [
 ];
 
 function MyRecord() {
+  const [listDiary, setListDiary] = useState(() => diaries);
+
+  const fetchMore = () => {
+    setListDiary((prev) => {
+      return [
+        ...prev,
+        ...Array.from({ length: 8 }).map(() => {
+          return {
+            key: Math.random().toString(),
+            date: `2021.05.20`,
+            time: "10:00",
+            title: "私の日記の記録が一部表示されます。",
+            desc: "テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト…",
+          };
+        }),
+      ];
+    });
+  };
+
+  const { fetchData, isLoading } = useLoadMore(fetchMore);
+
   return (
     <div className="flex flex-col mb-6 mt-14">
       <div className="bg-white px-[160px]">
@@ -185,7 +209,7 @@ function MyRecord() {
           MY DIARY
         </span>
         <div className="grid grid-cols-4 gap-2">
-          {diaries.map((item) => (
+          {listDiary.map((item) => (
             <div
               key={item.key}
               className="border-2 border-[#707070] p-4 flex flex-col"
@@ -205,8 +229,16 @@ function MyRecord() {
             </div>
           ))}
         </div>
+        {isLoading ? (
+          <div className="my-4">
+            <Spin />
+          </div>
+        ) : null}
         <div className="flex justify-center items-center m-6 ">
-          <GradientBtn containerClassName="py-3.5 px-[68px] rounded">
+          <GradientBtn
+            containerClassName="py-3.5 px-[68px] rounded"
+            onClick={fetchData}
+          >
             <span className="text-white text-xl font-normal ">
               記録をもっと見る
             </span>
