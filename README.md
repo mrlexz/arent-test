@@ -22,7 +22,7 @@ bun install
 Run the following command:
 
 ```bash
-bun run build
+bun build
 ```
 
 ### To review:
